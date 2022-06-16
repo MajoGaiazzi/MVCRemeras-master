@@ -1,0 +1,86 @@
+﻿@model MVCMerchandising.Models.MerchanTalleViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tienda</h1>
+
+<p>
+    <a asp-action="Create">Agregar Producto</a>
+</p>
+
+<form asp-controller="merchandisings" asp-action="Index" method="get">
+
+    <select asp-for="MerchanTalles" asp-items="Model.Talles">
+
+            <option value="">All</option>
+
+        </select>
+        Title: <input type="text" asp-for="SearchString" />
+
+        <input type="submit" value="Filter" />
+
+</form>
+
+<table class="table" style="background-color:#FFCEA5">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos[0].Imagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos[0].Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos[0].Talles)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos[0].Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos[0].Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos[0].Colores)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Productos) {
+        <tr>
+            <td>
+                    @if (item.Imagen != "")
+                    {
+                        <img src="@item.Imagen" alt="remeruki" height="100" width="100"/>
+                    }
+                    else
+                    {
+                        <h2>No disponible</h2>
+                    }
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Talles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colores)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

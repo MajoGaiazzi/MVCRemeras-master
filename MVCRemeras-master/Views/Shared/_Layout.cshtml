@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Merchandising</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+
+<body style="background-image: linear-gradient(to bottom, white, pink, #EFA5D0, #A76DFC);">
+
+    <header>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light box-shadow mb-3">
+
+            <div class="container">
+                <img src="https://play-lh.googleusercontent.com/XB2KVHIkLzmtSuNarhmTKmH9M2orc5FFvopF507YQjoPfpmlHTcwii04sSJy4HM6408=w240-h480-rw" width=70 height=70 alt="imgsf"/>
+                <button class="btn bg-light">
+                   <a class="navbar-brand" asp-controller="Home" asp-action="Index">Inicio</a> 
+                </button>
+                <button class="btn bg-light">
+                   <a class="navbar-brand" asp-controller="Merchandisings" asp-action="Index">Merchandising</a>
+                </button>
+                <button class="btn bg-light">
+                   <a class="navbar-brand" asp-controller="Home" asp-action="Privacy">Contacto</a>
+                </button>
+                <button class="btn bg-light">
+                   <a class="navbar-brand" asp-controller="Merchan" asp-action="Info">Info</a>
+                </button>
+                
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="container">
+
+        <main role="main" class="pb-3">
+
+          @RenderBody()
+
+        </main>
+
+    </div>
+
+
+    <footer class="border-top footer text-muted">
+
+        <div class="container">
+
+            &copy; 2022 - RemeranimeJAJASALU2 - <a asp-controller="Merchan" asp-action="Info">Informacion</a>
+
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+﻿@model MVCMerchandising.Models.Merchandising
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Merchandising</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Producto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Producto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Talles)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Talles)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Colores)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Colores)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Imagen)
+        </dt>
+        <dd class = "col-sm-10">
+                <img src="@Model.Imagen" alt="remeruki" height=600 width=600/>
+                    
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Volver a la Tienda</a>
+</div>
